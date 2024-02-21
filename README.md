@@ -1,2 +1,12 @@
-# s2324v-li42d
-Concurrent Programming - 2024 - LEIC42D
+# ISEL - Programação Concorrente
+### LEIC42D - Verão de 2023/2024
+
+**Docente:** João Trindade, gabinete F.0.21
+
+**Horário:**
+ - 3ª feira, 14h00, [T] E.1.09 / [P] LS4 (G.0.18)
+ - 5ª feira, 17h00, [T] E.1.09
+ 
+**Moodle**
+ - [Geral](https://2324moodle.isel.pt/course/view.php?id=7916)
+ - [LEIC42D](https://2324moodle.isel.pt/course/view.php?id=7919)
