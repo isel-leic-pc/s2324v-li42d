@@ -10,3 +10,6 @@
 **Moodle**
  - [Geral](https://2324moodle.isel.pt/course/view.php?id=7916)
  - [LEIC42D](https://2324moodle.isel.pt/course/view.php?id=7919)
+
+ **Slack**
+ - [#2324-2-leic42d](https://isel-leic-pc.slack.com/messages/C06K8EC05AP)
