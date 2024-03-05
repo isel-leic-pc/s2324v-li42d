@@ -6,7 +6,7 @@ val NITERATIONS = 1000000
 
 fun main() {
 
-	(0..NTHREADS).map { _ ->
+	(0 until NTHREADS).map {
 		val t = Thread { 
 			repeat(NITERATIONS) {
 				counter++
