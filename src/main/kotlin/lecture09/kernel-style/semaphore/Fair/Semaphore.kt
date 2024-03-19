@@ -5,6 +5,17 @@ import java.util.concurrent.locks.Condition
 import java.util.LinkedList
 import kotlin.concurrent.withLock
 
+// Using kernel-style.
+//
+// Threads are attended by order of arrival.
+// This avoids starvation, but any thread will have
+// to wait for its turn, even if enough permits are
+// available for its request.
+
+// WARNING: THIS CODE IS INCOMPLETE, AS IT LACKS
+//          INTERRUPTION HANDLING WHICH, IN THIS
+//          CASE, IS REQUIRED.
+
 class FairSemaphore(private var permits: Int) {
 	private val locker = ReentrantLock()
 
