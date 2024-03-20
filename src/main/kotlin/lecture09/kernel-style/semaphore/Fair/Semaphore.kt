@@ -16,7 +16,7 @@ import kotlin.concurrent.withLock
 //          INTERRUPTION HANDLING WHICH, IN THIS
 //          CASE, IS REQUIRED.
 
-class FairSemaphore(private var permits: Int) {
+class FairSemaphoreInc(private var permits: Int) {
 	private val locker = ReentrantLock()
 
 	private inner class Request(
