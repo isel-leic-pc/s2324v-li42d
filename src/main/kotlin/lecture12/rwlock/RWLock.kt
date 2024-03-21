@@ -33,8 +33,7 @@ import kotlin.time.Duration
 //    rwlock.endWrite()
 // }
 
-// INCOMPLETE
-class RWLockInc {
+class RWLock {
 	private val locker = ReentrantLock()
 	private var isWriting = false
 	private var numReaders = 0
@@ -89,7 +88,7 @@ class RWLockInc {
 	}
 
 	private fun quitWaitingForRead(myRequest: ReadRequest) {
-		throw NotImplementedError()
+		myRequest.numWaiting--
 	}
 
 	fun endRead() {
@@ -136,7 +135,10 @@ class RWLockInc {
 	}
 
 	private fun quitWaitingForWrite(myRequest: WriteRequest) {
-		throw NotImplementedError()
+		waitingWriters.remove(myRequest)
+		if (waitingWriters.isEmpty() && !isWriting) {
+			unblockAllWaitingReaders()
+		}
 	}
 
 	fun endWrite() {
@@ -153,7 +155,7 @@ class RWLockInc {
 	private fun unblockFirstWaitingWriter() {
 		if (waitingWriters.isNotEmpty()) {
 			val firstWriter = waitingWriters.removeFirst()
-			isWriting = true
+			isWriting = true  // execution delegation
 			firstWriter.done = true
 			firstWriter.condition.signal()
 		}
@@ -161,7 +163,7 @@ class RWLockInc {
 
 	private fun unblockAllWaitingReaders() {
 		if (currReadRequest.numWaiting > 0) {
-			numReaders += currReadRequest.numWaiting
+			numReaders += currReadRequest.numWaiting  // execution delegation
 			currReadRequest.done = true
 			currReadRequest.condition.signalAll()
 			currReadRequest = ReadRequest()
