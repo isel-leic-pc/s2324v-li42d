@@ -1,4 +1,4 @@
-package pt.isel.pc.jht.executors
+package pt.isel.pc.jht.executors.fixed
 
 import java.util.concurrent.*
 
