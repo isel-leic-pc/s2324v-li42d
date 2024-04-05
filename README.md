@@ -4,7 +4,7 @@
 **Docente:** João Trindade, gabinete F.0.21
 
 **Horário:**
- - 3ª feira, 14h00, [T] E.1.09 / [P] LS4 (G.0.18)
+ - 3ª feira, 14h00, [T] E.1.09 / [P] LS1 (G.0.13)
  - 5ª feira, 17h00, [T] E.1.09
  
 **Moodle**
