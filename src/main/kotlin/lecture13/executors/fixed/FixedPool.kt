@@ -8,12 +8,12 @@ val executor = Executors.newFixedThreadPool(
 
 fun main() {
 
-	val mainTid = Thread.currentThread().id
+	val mainTid = Thread.currentThread().threadId()
 	println("[T$mainTid] :: STARTING ::")
 
 	for (n in 0..15) {
 		executor.execute {
-			val tid = Thread.currentThread().id
+			val tid = Thread.currentThread().threadId()
 			println("[T$tid] executing task #$n")		
 		}
 	}
